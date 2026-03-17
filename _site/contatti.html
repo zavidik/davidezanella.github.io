@@ -58,6 +58,20 @@
     }
     .contatti-note strong { color: var(--text); }
   </style>
+<script>
+  (function(){
+    var v="?v="+Date.now();
+    document.querySelectorAll('script[src],link[rel="stylesheet"]')
+      .forEach(function(e){
+        var a=e.tagName==="LINK"?"href":"src";
+        var u=e.getAttribute(a);
+        if(u&&u.indexOf("?")===-1&&!u.startsWith("http")&&!u.startsWith("//"))
+          e.setAttribute(a,u+v);
+      });
+  })();
+  </script>
+
+
 </head>
 <body>
 <div class="container" style="max-width:680px">

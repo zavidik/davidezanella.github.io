@@ -11,6 +11,20 @@
     .past-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 14px; margin-top: 14px; opacity: .65; }
     @media(max-width:500px){ .past-grid{grid-template-columns:1fr} }
   </style>
+<script>
+  (function(){
+    var v="?v="+Date.now();
+    document.querySelectorAll('script[src],link[rel="stylesheet"]')
+      .forEach(function(e){
+        var a=e.tagName==="LINK"?"href":"src";
+        var u=e.getAttribute(a);
+        if(u&&u.indexOf("?")===-1&&!u.startsWith("http")&&!u.startsWith("//"))
+          e.setAttribute(a,u+v);
+      });
+  })();
+  </script>
+
+
 </head>
 <body>
 <div class="container">

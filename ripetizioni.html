@@ -8,6 +8,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
   <link rel="stylesheet" href="style.css">
+<script>
+  (function(){
+    var v="?v="+Date.now();
+    document.querySelectorAll('script[src],link[rel="stylesheet"]')
+      .forEach(function(e){
+        var a=e.tagName==="LINK"?"href":"src";
+        var u=e.getAttribute(a);
+        if(u&&u.indexOf("?")===-1&&!u.startsWith("http")&&!u.startsWith("//"))
+          e.setAttribute(a,u+v);
+      });
+  })();
+  </script>
+
 </head>
 <body>
 <div class="container">

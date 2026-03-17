@@ -30,6 +30,19 @@
     .related-card-date { font-size: .75rem; color: var(--muted); }
     .not-found { text-align: center; padding: 80px 0; color: var(--muted); }
   </style>
+<script>
+  (function(){
+    var v="?v="+Date.now();
+    document.querySelectorAll('script[src],link[rel="stylesheet"]')
+      .forEach(function(e){
+        var a=e.tagName==="LINK"?"href":"src";
+        var u=e.getAttribute(a);
+        if(u&&u.indexOf("?")===-1&&!u.startsWith("http")&&!u.startsWith("//"))
+          e.setAttribute(a,u+v);
+      });
+  })();
+  </script>
+
 </head>
 <body>
 <div class="container">

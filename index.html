@@ -16,6 +16,19 @@
     .tagline { color: var(--muted); font-size: .95rem; font-weight: 300; }
     #main-grid { animation: fadeUp .6s .1s ease both; }
   </style>
+<script>
+  (function(){
+    var v="?v="+Date.now();
+    document.querySelectorAll('script[src],link[rel="stylesheet"]')
+      .forEach(function(e){
+        var a=e.tagName==="LINK"?"href":"src";
+        var u=e.getAttribute(a);
+        if(u&&u.indexOf("?")===-1&&!u.startsWith("http")&&!u.startsWith("//"))
+          e.setAttribute(a,u+v);
+      });
+  })();
+  </script>
+
 </head>
 <body>
 <div class="container">

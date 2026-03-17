@@ -97,6 +97,20 @@
     .social-link:hover { transform: translateY(-2px); box-shadow: 0 5px 18px rgba(0,0,0,.1); }
     .social-link-icon { font-size: 1.1rem; }
   </style>
+<script>
+  (function(){
+    var v="?v="+Date.now();
+    document.querySelectorAll('script[src],link[rel="stylesheet"]')
+      .forEach(function(e){
+        var a=e.tagName==="LINK"?"href":"src";
+        var u=e.getAttribute(a);
+        if(u&&u.indexOf("?")===-1&&!u.startsWith("http")&&!u.startsWith("//"))
+          e.setAttribute(a,u+v);
+      });
+  })();
+  </script>
+
+
 </head>
 <body>
 <div class="container">
