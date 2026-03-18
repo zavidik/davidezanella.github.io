@@ -113,15 +113,15 @@ const CARDS_CSS = `
   @media (max-width: 500px) {
     .main-grid { gap: 10px; }
     .main-grid > div { flex: 0 0 calc(50% - 5px); max-width: calc(50% - 5px); }
-    .card-head { flex-direction: column; align-items: center; text-align: center; padding: 14px 10px 12px; gap: 8px; min-height: unset; }
+    .card-head { flex-direction: column; align-items: center; text-align: center; padding: 14px 10px 10px; gap: 6px; min-height: unset; }
     .cat-icon { width: 40px; height: 40px; font-size: 1.6rem; }
-    .card-chevron { display: none; }
+    .card-chevron { font-size: .65rem; margin-left: 0; }
     .cat-card.open .sub-links { max-height: 600px; opacity: 1; padding-bottom: 10px; }
     .sub-link { padding: 8px 8px; gap: 8px; }
     .sub-link-icon { width: 20px; font-size: .9rem; }
     .sub-link-text { font-size: .8rem; }
     .sub-link-desc { font-size: .68rem; }
-    .sub-link-arrow { display: none; }
+    .sub-link-arrow { font-size: .65rem; margin-left: 4px; }
   }
 `;
 
