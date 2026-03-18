@@ -260,3 +260,86 @@ footer { text-align: center; margin-top: 60px; font-size: .78rem; color: var(--m
 @media (max-width: 500px) {
   .blog-grid, .pinned-grid { grid-template-columns: 1fr; }
 }
+
+/* ══════════════════════════════════════════
+   LAYOUT CONTENUTO — immagine + testo, timeline, blockquote
+   Usabili in qualsiasi pagina del sito
+   ══════════════════════════════════════════ */
+
+/* ── IMMAGINE + TESTO AFFIANCATI ── */
+.image-text {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin: 24px 0;
+}
+.image-text img {
+  width: 200px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.image-right { flex-direction: row-reverse; }
+
+@media (max-width: 580px) {
+  .image-text,
+  .image-right {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-text img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ── TIMELINE A DUE COLONNE ── */
+.timeline-container {
+  display: flex;
+  gap: 40px;
+  margin: 24px 0;
+}
+.timeline {
+  flex: 1;
+  border-left: 3px solid var(--border);
+  padding-left: 20px;
+}
+.timeline h4 {
+  font-weight: 600;
+  font-size: .9rem;
+  margin-bottom: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.timeline p {
+  font-size: .88rem;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+@media (max-width: 560px) {
+  .timeline-container { flex-direction: column; gap: 20px; }
+}
+
+/* ── BLOCKQUOTE ── */
+blockquote {
+  border-left: 4px solid var(--border);
+  padding: 16px 20px 16px 40px;
+  margin: 28px 0;
+  background: var(--card);
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--muted);
+  position: relative;
+}
+blockquote::before {
+  content: "\201C";
+  font-size: 48px;
+  position: absolute;
+  left: 10px;
+  top: -4px;
+  color: var(--border);
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+}

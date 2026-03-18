@@ -66,13 +66,13 @@ const CARDS_CSS = `
   }
   @media (hover: hover) {
     .cat-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.13); transform: translateY(-3px); }
-    .cat-card:hover .sub-links { max-height: 400px; opacity: 1; padding-bottom: 12px; }
+    .cat-card:hover .sub-links { max-height: 600px; opacity: 1; padding-bottom: 12px; }
     .cat-card:hover .card-chevron { transform: rotate(180deg); }
     .cat-card:hover .cat-bar { height: 4px; }
     .cat-card:hover .sub-divider { opacity: 1; }
   }
   .cat-card.open { box-shadow: 0 8px 32px rgba(0,0,0,.13); transform: translateY(-3px); }
-  .cat-card.open .sub-links { max-height: 400px; opacity: 1; padding-bottom: 12px; }
+  .cat-card.open .sub-links { max-height: 600px; opacity: 1; padding-bottom: 12px; }
   .cat-card.open .card-chevron { transform: rotate(180deg); }
   .cat-card.open .cat-bar { height: 4px; }
   .cat-card.open .sub-divider { opacity: 1; }
@@ -111,7 +111,17 @@ const CARDS_CSS = `
   .c-tech    .sub-link:hover { color: var(--accent-tech); }
   .c-sport   .sub-link:hover { color: var(--accent-sport); }
   @media (max-width: 500px) {
-    .main-grid > div { flex: 0 0 calc(50% - 7px); max-width: calc(50% - 7px); }
+    .main-grid { gap: 10px; }
+    .main-grid > div { flex: 0 0 calc(50% - 5px); max-width: calc(50% - 5px); }
+    .card-head { flex-direction: column; align-items: center; text-align: center; padding: 14px 10px 12px; gap: 8px; min-height: unset; }
+    .cat-icon { width: 40px; height: 40px; font-size: 1.6rem; }
+    .card-chevron { display: none; }
+    .cat-card.open .sub-links { max-height: 600px; opacity: 1; padding-bottom: 10px; }
+    .sub-link { padding: 8px 8px; gap: 8px; }
+    .sub-link-icon { width: 20px; font-size: .9rem; }
+    .sub-link-text { font-size: .8rem; }
+    .sub-link-desc { font-size: .68rem; }
+    .sub-link-arrow { display: none; }
   }
 `;
 
