@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { divider: true },
   { href: 'bacheca.html',  emoji: '📌', label: 'Bacheca' },
   { href: 'articoli.html', emoji: '📝', label: 'Articoli' },
+  { href: 'galleria.html', emoji: '📷', label: 'Galleria' },
   { divider: true },
   {
     emoji: '👤', label: 'Su di me',
@@ -70,12 +71,53 @@ function initNav(activePage) {
     document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'))
   );
 
+  // Open Graph meta tags per anteprima sui social
+  // Aggiunge og:image di default se non è già presente nella pagina
+  if (!document.querySelector('meta[property="og:image"]')) {
+    const metas = [
+      { property: 'og:type',        content: 'website' },
+      { property: 'og:site_name',   content: 'Davide Zanella' },
+      { property: 'og:image',       content: 'https://davidezanella.com/img/profilo.jpg' },
+      { property: 'og:image:width',  content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { name: 'twitter:card',       content: 'summary_large_image' },
+      { name: 'twitter:image',      content: 'https://davidezanella.com/img/profilo.jpg' },
+    ];
+    metas.forEach(function(m) {
+      const el = document.createElement('meta');
+      if (m.property) el.setAttribute('property', m.property);
+      if (m.name)     el.setAttribute('name', m.name);
+      el.setAttribute('content', m.content);
+      document.head.appendChild(el);
+    });
+    // og:title e og:url dinamici
+    const ogTitle = document.createElement('meta');
+    ogTitle.setAttribute('property', 'og:title');
+    ogTitle.setAttribute('content', document.title || 'Davide Zanella');
+    document.head.appendChild(ogTitle);
+
+    const ogUrl = document.createElement('meta');
+    ogUrl.setAttribute('property', 'og:url');
+    ogUrl.setAttribute('content', window.location.href);
+    document.head.appendChild(ogUrl);
+
+    const ogDesc = document.querySelector('meta[name="description"]');
+    if (ogDesc) {
+      const el = document.createElement('meta');
+      el.setAttribute('property', 'og:description');
+      el.setAttribute('content', ogDesc.getAttribute('content'));
+      document.head.appendChild(el);
+    }
+  }
+
+
+  
   // Umami analytics
-if (!document.querySelector('script[src*="umami"]')) {
-  const s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://cloud.umami.is/script.js';
-  s.setAttribute('data-website-id', 'c710fae6-0fb3-47f0-bd14-140d6e3e363d');
-  document.head.appendChild(s);
-}
+  if (!document.querySelector('script[src*="umami"]')) {
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://cloud.umami.is/script.js';
+    s.setAttribute('data-website-id', 'c710fae6-0fb3-47f0-bd14-140d6e3e363d');
+    document.head.appendChild(s);
+  }
 }

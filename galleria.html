@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galleria — Davide Zanella</title>
+  <meta name="description" content="Galleria fotografica di Davide Zanella — concerti, viaggi e momenti.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎺</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <script>(function(){var v="?v="+Date.now();document.querySelectorAll('script[src],link[rel="stylesheet"]').forEach(function(e){var a=e.tagName==="LINK"?"href":"src",u=e.getAttribute(a);if(u&&u.indexOf("?")===-1&&!u.startsWith("http")&&!u.startsWith("//"))e.setAttribute(a,u+v);});})();</script>
+  <style>
+    .gallery-filter {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 32px; animation: fadeUp .5s .05s ease both;
+    }
+    .gallery-month { margin-bottom: 40px; animation: fadeUp .5s ease both; }
+    .gallery-month-title {
+      font-size: .72rem; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 12px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px;
+    }
+    @media(max-width:500px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    }
+    .gallery-item {
+      position: relative; aspect-ratio: 1;
+      border-radius: 10px; overflow: hidden;
+      cursor: pointer; background: var(--border);
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .3s ease, filter .3s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.06); filter: brightness(.85); }
+    .gallery-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.6) 0%, transparent 55%);
+      opacity: 0; transition: opacity .25s;
+      display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 10px;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-caption { color: #fff; font-size: .75rem; font-weight: 500; line-height: 1.3; }
+    .gallery-item-tag { font-size: .68rem; color: rgba(255,255,255,.7); margin-top: 2px; }
+    .gallery-item-badge {
+      position: absolute; top: 8px; right: 8px;
+      background: rgba(0,0,0,.5); color: #fff;
+      border-radius: 6px; padding: 3px 6px;
+      font-size: .68rem; opacity: 0; transition: opacity .2s;
+    }
+    .gallery-item:hover .gallery-item-badge { opacity: 1; }
+
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,.93);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity .25s;
+    }
+    .lightbox.open { opacity: 1; pointer-events: all; }
+    .lightbox-inner {
+      position: relative; max-width: 90vw; max-height: 90vh;
+      display: flex; flex-direction: column; align-items: center; gap: 14px;
+    }
+    .lightbox-img {
+      max-width: 90vw; max-height: 78vh;
+      border-radius: 10px; object-fit: contain;
+      box-shadow: 0 8px 48px rgba(0,0,0,.5);
+    }
+    .lightbox-caption { color: rgba(255,255,255,.85); font-size: .88rem; text-align: center; line-height: 1.4; }
+    .lightbox-post-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.15); color: #fff;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 8px; padding: 7px 14px;
+      text-decoration: none; font-size: .82rem; transition: background .15s;
+    }
+    .lightbox-post-link:hover { background: rgba(255,255,255,.25); }
+    .lightbox-close {
+      position: absolute; top: -40px; right: 0;
+      color: rgba(255,255,255,.7); font-size: 1.5rem;
+      cursor: pointer; background: none; border: none; padding: 4px; transition: color .15s;
+    }
+    .lightbox-close:hover { color: #fff; }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      color: rgba(255,255,255,.7); font-size: 1.8rem;
+      cursor: pointer; background: rgba(0,0,0,.3); border: none;
+      border-radius: 50%; width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s, color .15s;
+    }
+    .lightbox-nav:hover { background: rgba(0,0,0,.6); color: #fff; }
+    .lightbox-prev { left: -60px; }
+    .lightbox-next { right: -60px; }
+    @media(max-width:600px) { .lightbox-prev { left: 8px; } .lightbox-next { right: 8px; } }
+    .empty-state { color: var(--muted); text-align: center; padding: 60px 0; font-size: .9rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Galleria</span>
+  </nav>
+  <h1 class="page-title">📷 Galleria</h1>
+  <p class="page-sub">Foto dai concerti, dai viaggi e dai momenti che vale la pena ricordare.</p>
+  <div class="gallery-filter" id="gallery-filter"></div>
+  <div id="gallery-content"></div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lb-close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lb-prev">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" id="lb-next">&#8250;</button>
+    <img class="lightbox-img" id="lb-img" src="" alt="">
+    <div class="lightbox-caption" id="lb-caption"></div>
+    <a class="lightbox-post-link" id="lb-post-link" href="#" style="display:none">
+      📝 Vai all'articolo correlato &rarr;
+    </a>
+  </div>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script>
+initNav('galleria.html');
+
+// ══════════════════════════════════════════
+//  FOTO EXTRA — opzionale
+//  Aggiungi qui foto che non sono cover di post.
+//  Le cover dei post vengono aggiunte in automatico.
+//
+//  CAMPI:
+//  src      → 'img/galleria/foto.jpg'
+//  caption  → didascalia breve
+//  date     → 'YYYY-MM-DD'
+//  tags     → array  es. ['musica', 'palazzolo']
+//  postId   → null (non collegata a nessun post)
+// ══════════════════════════════════════════
+const EXTRA_PHOTOS = [
+  // Esempio:
+  // { src: 'img/galleria/foto.jpg', caption: 'Descrizione', date: '2025-06-15', tags: ['musica'], postId: null },
+];
+
+// ── Costruisce la lista unificata ──
+// 1. Cover dei post (automatico)
+const postPhotos = POSTS
+  .filter(p => p.cover)
+  .map(p => ({
+    src:     p.cover,
+    caption: p.title,
+    date:    p.date,
+    tags:    p.tags,
+    postId:  p.id,
+  }));
+
+// 2. Unisce con le foto extra, ordina per data decrescente
+const ALL_PHOTOS = [...postPhotos, ...EXTRA_PHOTOS]
+  .sort((a, b) => b.date.localeCompare(a.date));
+
+// ── helpers ──
+let activeTag = null;
+let flatFiltered = [];
+let currentIndex = 0;
+
+function getMonthLabel(dateStr) {
+  const [y, m] = dateStr.split('-');
+  const M = ['','Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno',
+             'Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+  return M[parseInt(m)] + ' ' + y;
+}
+
+function groupByMonth(photos) {
+  const groups = {};
+  photos.forEach(p => {
+    const key = p.date.substring(0, 7);
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(p);
+  });
+  return Object.entries(groups)
+    .sort((a, b) => b[0].localeCompare(a[0]))
+    .map(([key, photos]) => ({ key, label: getMonthLabel(photos[0].date), photos }));
+}
+
+function render() {
+  const filtered = activeTag
+    ? ALL_PHOTOS.filter(p => p.tags.includes(activeTag))
+    : ALL_PHOTOS;
+  flatFiltered = filtered;
+
+  const content = document.getElementById('gallery-content');
+  if (!filtered.length) {
+    content.innerHTML = '<p class="empty-state">Nessuna foto disponibile al momento.<br>Le cover degli articoli appariranno qui automaticamente.</p>';
+    return;
+  }
+
+  const groups = groupByMonth(filtered);
+  content.innerHTML = groups.map(group => {
+    const photosHtml = group.photos.map(p => {
+      const idx = filtered.indexOf(p);
+      const badge = p.postId ? '<span class="gallery-item-badge">📝 articolo</span>' : '';
+      const tagLabel = p.tags.filter(t => !CATS[t]).slice(0,2).join(' · ') || p.tags[0] || '';
+      return `<div class="gallery-item" onclick="openLightbox(${idx})">
+        <img src="${p.src}" alt="${p.caption}" loading="lazy">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-caption">${p.caption}</div>
+          ${tagLabel ? `<div class="gallery-item-tag">${tagLabel}</div>` : ''}
+        </div>
+        ${badge}
+      </div>`;
+    }).join('');
+    return `<div class="gallery-month">
+      <div class="gallery-month-title">${group.label} &middot; ${group.photos.length} foto</div>
+      <div class="gallery-grid">${photosHtml}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── filtri ──
+function buildFilters() {
+  const allTags = [...new Set(ALL_PHOTOS.flatMap(p => p.tags))];
+  if (!allTags.length) return;
+  const bar = document.getElementById('gallery-filter');
+  bar.innerHTML = allTags.map(t =>
+    `<span class="tag" ${CATS[t] ? `data-cat="${t}"` : ''} data-filter="${t}">${t}</span>`
+  ).join('');
+  bar.querySelectorAll('.tag').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeTag = activeTag === btn.dataset.filter ? null : btn.dataset.filter;
+      bar.querySelectorAll('.tag').forEach(b =>
+        b.classList.toggle('active', b.dataset.filter === activeTag)
+      );
+      render();
+    });
+  });
+}
+
+// ── lightbox ──
+function openLightbox(index) {
+  currentIndex = index;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function updateLightbox() {
+  const p = flatFiltered[currentIndex];
+  document.getElementById('lb-img').src = p.src;
+  document.getElementById('lb-img').alt = p.caption;
+  document.getElementById('lb-caption').textContent = p.caption;
+  const lnk = document.getElementById('lb-post-link');
+  if (p.postId) { lnk.href = 'post.html?id=' + p.postId; lnk.style.display = 'inline-flex'; }
+  else { lnk.style.display = 'none'; }
+}
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
+document.getElementById('lb-prev').addEventListener('click', function(e) {
+  e.stopPropagation();
+  currentIndex = (currentIndex - 1 + flatFiltered.length) % flatFiltered.length;
+  updateLightbox();
+});
+document.getElementById('lb-next').addEventListener('click', function(e) {
+  e.stopPropagation();
+  currentIndex = (currentIndex + 1) % flatFiltered.length;
+  updateLightbox();
+});
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft')  { currentIndex = (currentIndex - 1 + flatFiltered.length) % flatFiltered.length; updateLightbox(); }
+  if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % flatFiltered.length; updateLightbox(); }
+});
+
+buildFilters();
+render();
+</script>
+</body>
+</html>
