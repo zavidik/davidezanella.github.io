@@ -69,4 +69,13 @@ function initNav(activePage) {
   document.addEventListener('click', () =>
     document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'))
   );
+
+  // Umami analytics
+if (!document.querySelector('script[src*="umami"]')) {
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://cloud.umami.is/script.js';
+  s.setAttribute('data-website-id', 'c710fae6-0fb3-47f0-bd14-140d6e3e363d');
+  document.head.appendChild(s);
+}
 }
