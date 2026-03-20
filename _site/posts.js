@@ -17,6 +17,491 @@
 
 const POSTS = [
   {
+  id: "domotica-luci-home-assistant",
+  title: "Domotizzare le luci con Home Assistant: tutte le soluzioni",
+  date: "2026-03-20",
+  cover: "img/posts/domotica-luci-home-assistant.jpg",
+  pinned: false,
+  tags: ["tech", "home assistant", "guide", "smart home"],
+  excerpt: "Lampadine smart, relè, Zigbee, dimmer, strisce LED: analisi completa di tutte le soluzioni per automatizzare l'illuminazione con Home Assistant, con vantaggi e svantaggi di ognuna.",
+  content: `
+<div class="post-guida-v1">
+
+  <p class="pg-intro">
+    L'illuminazione è uno dei primi e più visibili ambiti della domotica domestica.
+    Automatizzare le luci significa risparmio energetico, comodità quotidiana,
+    simulazione di presenza e integrazione con sensori, scene e assistenti vocali.
+    In questa guida analizziamo le sei principali soluzioni compatibili con Home Assistant.
+  </p>
+  <p class="pg-intro">
+    Anche se si tratta "solo" di lampadine, le opzioni per renderle intelligenti sono molteplici.
+    In questo post vediamo i metodi standard, ma vorrei realizzare un altro post dove analizzare
+    le soluzioni "ibride", ossia quelle soluzioni che ne includono almeno due, tra quelle presenti qui sotto, contemporaneamente.
+  </p>
+
+  <div class="pg-tip">
+    <span class="pg-tip-icon">ℹ️</span>
+    <span>
+      Ogni soluzione è compatibile con Home Assistant, ma alcune richiedono hub aggiuntivi,
+      integrazioni cloud o hardware dedicato. Valuta la tua infrastruttura prima di acquistare.
+    </span>
+  </div>
+
+  <div class="pg-toc">
+    <div class="pg-toc-label">Indice</div>
+    <ol>
+      <li><a href="#pg-bulbs">Lampadine Smart</a></li>
+      <li><a href="#pg-switches">Interruttori Smart</a></li>
+      <li><a href="#pg-shelly">Relè Smart (Shelly)</a></li>
+      <li><a href="#pg-zigbee">Zigbee / Z-Wave</a></li>
+      <li><a href="#pg-dimmer">Dimmer Smart</a></li>
+      <li><a href="#pg-strip">Strisce LED Smart</a></li>
+    </ol>
+  </div>
+
+  <!-- ── 1. Lampadine Smart ── -->
+  <div id="pg-bulbs" class="pg-card">
+    <div class="pg-card-header">
+      <div class="pg-card-icon">💡</div>
+      <div class="pg-card-header-text">
+        <h3>1. Lampadine Smart</h3>
+        <p>Philips Hue, IKEA TRÅDFRI, Tuya, TP-Link Tapo…</p>
+      </div>
+      <div class="pg-difficulty">
+        <span>Difficoltà</span>
+        <div class="pg-dots">
+          <span class="pg-dot on"></span>
+          <span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-card-body">
+      <p>
+        Le lampadine smart si sostituiscono alle lampadine tradizionali senza modificare l'impianto
+        elettrico. Sono la soluzione più semplice per iniziare: plug &amp; play, supporto colore RGBW,
+        dimmerabilità e integrazione immediata con Home Assistant tramite integrazioni native o Zigbee2MQTT.
+      </p>
+      <p>
+        <strong>Attenzione:</strong> l'interruttore fisico deve restare <em>sempre acceso</em>. Se qualcuno
+        lo spegne, la lampadina non è più alimentata e ovviamente perde connessione. Questo si mitiga con interruttori smart abbinati
+        o impostando il comportamento all'accensione (<em>power on behavior</em>) che però non è sempre disponibile.
+      </p>
+      <div class="pg-procon">
+        <div class="pg-pros">
+          <div class="pg-procon-label">Vantaggi</div>
+          <ul>
+            <li>Installazione semplicissima, nessun elettricista</li>
+            <li>Supporto colore e temperatura colore</li>
+            <li>Dimmerabilità integrata</li>
+            <li>Aggiornamenti firmware facili</li>
+            <li>Ampia scelta di brand e prezzi</li>
+          </ul>
+        </div>
+        <div class="pg-cons">
+          <div class="pg-procon-label">Svantaggi</div>
+          <ul>
+            <li>Interruttore fisico deve restare sempre acceso</li>
+            <li>Costo per lampada più alto</li>
+            <li>Alcuni richiedono hub proprietario (Hue Bridge)</li>
+            <li>Wi-Fi può saturare la rete domestica</li>
+            <li>Dipendenza da cloud per alcune marche</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pg-tags">
+        <span class="pg-tag">💰 €10–50 / lampadina</span>
+        <span class="pg-tag hl">⚡ Nessun lavoro elettrico</span>
+        <span class="pg-tag">📡 Wi-Fi o Zigbee</span>
+        <span class="pg-tag">🎨 RGBW disponibile</span>
+      </div>
+      <p>
+        <br><strong>La mia esperienza</strong><br>
+        Personalmente ho provato diverse lampadine: Wi-Fi e ZigBee.
+
+        <br><strong>Lampadine Wi-Fi Tuya, LIFX e Xiaomi</strong><br>
+        Di lampadine Wi-Fi Tuya ne ho molte. Sono abbastanza economiche (tra i 10€ e i 15€), però non le consiglio:
+        sono dipendenti dal cloud (ho provato anche ad usare la custom integration LocalTuya su Home Assistant e dal router 
+        bloccare il loro ip verso internet, ma a volte smettono di funzionare perché hanno sempre bisogno di "parlare" con il server della
+        casa madre). <br>
+        Inoltre, avere molte lamapdine con protocollo Wi-Fi necessita di un buon router che deve iniziare a gestire un numero elevato 
+        di dispositivi, oltre a quelli di base (smartphone, computer, smart tv, smart speaker, videocamere di sorveglianza, ...).<br>
+        Il protocollo Wi-Fi per delle lampadine è sprecato. Consuma tanto e permette di trasferire dati molto velocemente, il che non 
+        è necessario per delle informazioni così semplici come quelle che deve ricevere e inviare una lampadina.<br>
+        Un altro svantaggio enorme è dato dalla non possibilità di impostare il power on behavior. Davvero scomodo: immaginate di avere 
+        queste lampadine in camera da letto e durante la notte la corrente continua a saltare e a tornare, per problemi esterni alla vostra
+        abitazione. Queste lampadine sono impostate per accendere la luce ogni volta che vengono alimentate e non c'è nulla che si possa 
+        cambiare, dunque la vostra luce della camera si accende più volte durante la notte, ma non è finita qui.<br>
+        Dato che la corrente è saltata, acnhe il router si è spento, e quando la corrente torna 
+        <br><strong>Lampadine ZigBee</strong><br>
+        Proprio per risolvere i problemi delle lampadine Wi-Fi, ho provato anche delle lampadine ZigBee. Nel mio caso sono lampadine 
+        Philips Hue, molto costose rispetto a quelle Tuya, ma sicuramente più affidabili
+      </p>
+    </div>
+  </div>
+
+  <!-- ── 2. Interruttori Smart ── -->
+  <div id="pg-switches" class="pg-card">
+    <div class="pg-card-header">
+      <div class="pg-card-icon">🔲</div>
+      <div class="pg-card-header-text">
+        <h3>2. Interruttori Smart</h3>
+        <p>Sonoff TX, Tuya Wi-Fi Switch, Fibaro…</p>
+      </div>
+      <div class="pg-difficulty">
+        <span>Difficoltà</span>
+        <div class="pg-dots">
+          <span class="pg-dot on"></span><span class="pg-dot on"></span>
+          <span class="pg-dot on"></span><span class="pg-dot"></span><span class="pg-dot"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-card-body">
+      <p>
+        Gli interruttori smart sostituiscono i normali interruttori a parete e controllano
+        la linea di alimentazione verso luci tradizionali. Mantengono l'usabilità fisica
+        e aggiungono controllo remoto e automazioni. Richiedono un minimo di lavoro elettrico.
+      </p>
+      <p>
+        Molti modelli supportano il cablaggio senza neutro (solo fase e carico), fondamentale
+        negli impianti italiani più vecchi. Verificare sempre la compatibilità prima dell'acquisto.
+      </p>
+      <div class="pg-procon">
+        <div class="pg-pros">
+          <div class="pg-procon-label">Vantaggi</div>
+          <ul>
+            <li>Funziona con qualsiasi lampadina tradizionale</li>
+            <li>Interruttore fisico sempre funzionante</li>
+            <li>Aspetto estetico personalizzabile</li>
+            <li>Modelli senza neutro disponibili</li>
+          </ul>
+        </div>
+        <div class="pg-cons">
+          <div class="pg-procon-label">Svantaggi</div>
+          <ul>
+            <li>Richiede lavoro elettrico</li>
+            <li>Non gestisce dimmer o colori</li>
+            <li>Dimensioni possono non entrare in scatole piccole</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pg-tags">
+        <span class="pg-tag">💰 €15–60 / interruttore</span>
+        <span class="pg-tag hl">🏠 Compatibile impianti esistenti</span>
+        <span class="pg-tag">📡 Wi-Fi o Zigbee</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 3. Relè Smart ── -->
+  <div id="pg-shelly" class="pg-card">
+    <div class="pg-card-header">
+      <div class="pg-card-icon">⚡</div>
+      <div class="pg-card-header-text">
+        <h3>3. Relè Smart (Shelly, Sonoff Mini…)</h3>
+        <p>Installazione in scatola, estetica invariata</p>
+      </div>
+      <div class="pg-difficulty">
+        <span>Difficoltà</span>
+        <div class="pg-dots">
+          <span class="pg-dot on"></span><span class="pg-dot on"></span>
+          <span class="pg-dot on"></span><span class="pg-dot on"></span><span class="pg-dot"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-card-body">
+      <p>
+        I relè smart si inseriscono dentro la scatola dell'interruttore o di derivazione,
+        senza sostituirlo visivamente. L'interruttore originale rimane al suo posto e continua
+        a funzionare normalmente, mentre il relè aggiunge la gestione intelligente sul circuito.
+      </p>
+      <p>
+        Shelly è amatissima dalla community Home Assistant per l'integrazione locale nativa
+        (nessun cloud), supporto MQTT, prezzi competitivi e dimensioni contenute.
+      </p>
+      <div class="pg-procon">
+        <div class="pg-pros">
+          <div class="pg-procon-label">Vantaggi</div>
+          <ul>
+            <li>Interruttori originali esteticamente invariati</li>
+            <li>Funzionamento completamente locale (nessun cloud)</li>
+            <li>Compatibile con qualsiasi lampadina</li>
+            <li>Prezzi molto competitivi (da ~€8)</li>
+            <li>Supporto MQTT + HA nativo eccellente</li>
+          </ul>
+        </div>
+        <div class="pg-cons">
+          <div class="pg-procon-label">Svantaggi</div>
+          <ul>
+            <li>Richiede conoscenze elettriche più avanzate</li>
+            <li>Spazio nella scatola non sempre disponibile</li>
+            <li>Nessuna gestione del colore</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pg-tags">
+        <span class="pg-tag">💰 €8–20 / relè</span>
+        <span class="pg-tag hl">🔌 100% locale</span>
+        <span class="pg-tag">🏠 Estetica invariata</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 4. Zigbee / Z-Wave ── -->
+  <div id="pg-zigbee" class="pg-card">
+    <div class="pg-card-header">
+      <div class="pg-card-icon">📡</div>
+      <div class="pg-card-header-text">
+        <h3>4. Ecosistema Zigbee / Z-Wave</h3>
+        <p>Zigbee2MQTT + coordinator, ZHA, Z-Wave JS…</p>
+      </div>
+      <div class="pg-difficulty">
+        <span>Difficoltà</span>
+        <div class="pg-dots">
+          <span class="pg-dot on"></span><span class="pg-dot on"></span>
+          <span class="pg-dot on"></span><span class="pg-dot on"></span><span class="pg-dot"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-card-body">
+      <p>
+        Zigbee e Z-Wave sono protocolli radio a bassa potenza pensati per la domotica.
+        Non saturano il Wi-Fi e creano una rete mesh autonoma dove ogni dispositivo
+        collegato alla rete fa da ripetitore. Si abbinano a un coordinator USB collegato
+        al server Home Assistant, gestito via Zigbee2MQTT o ZHA.
+      </p>
+      <div class="pg-procon">
+        <div class="pg-pros">
+          <div class="pg-procon-label">Vantaggi</div>
+          <ul>
+            <li>Rete mesh estesa e affidabile</li>
+            <li>Completamente locale, nessun cloud</li>
+            <li>Enorme ecosistema di dispositivi</li>
+            <li>Basso consumo energetico</li>
+            <li>Ottima stabilità a lungo termine</li>
+          </ul>
+        </div>
+        <div class="pg-cons">
+          <div class="pg-procon-label">Svantaggi</div>
+          <ul>
+            <li>Richiede coordinator hardware USB (~€15–30)</li>
+            <li>Setup iniziale più tecnico</li>
+            <li>Z-Wave: licenza proprietaria, costo più alto</li>
+            <li>Possibili problemi di pairing su alcuni dispositivi</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pg-tags">
+        <span class="pg-tag">💰 €10–40 / dispositivo</span>
+        <span class="pg-tag hl">🕸 Mesh network</span>
+        <span class="pg-tag hl">🔌 100% locale</span>
+        <span class="pg-tag">🔋 Basso consumo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 5. Dimmer Smart ── -->
+  <div id="pg-dimmer" class="pg-card">
+    <div class="pg-card-header">
+      <div class="pg-card-icon">🔆</div>
+      <div class="pg-card-header-text">
+        <h3>5. Dimmer Smart</h3>
+        <p>Shelly Dimmer, Fibaro Dimmer, Lutron…</p>
+      </div>
+      <div class="pg-difficulty">
+        <span>Difficoltà</span>
+        <div class="pg-dots">
+          <span class="pg-dot on"></span><span class="pg-dot on"></span>
+          <span class="pg-dot on"></span><span class="pg-dot on"></span><span class="pg-dot"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-card-body">
+      <p>
+        I dimmer smart permettono di regolare l'intensità luminosa da app, automazione o voce.
+        Si installano in scatola come i relè ma gestiscono il segnale in modo diverso (TRIAC).
+        <strong>Attenzione alla compatibilità:</strong> non tutte le lampadine LED sono dimmerabili,
+        ed è fondamentale scegliere il tipo di dimmer corretto in base al carico.
+      </p>
+      <div class="pg-procon">
+        <div class="pg-pros">
+          <div class="pg-procon-label">Vantaggi</div>
+          <ul>
+            <li>Controllo preciso dell'intensità luminosa</li>
+            <li>Risparmio energetico con la regolazione</li>
+            <li>Migliore comfort visivo e scene d'atmosfera</li>
+          </ul>
+        </div>
+        <div class="pg-cons">
+          <div class="pg-procon-label">Svantaggi</div>
+          <ul>
+            <li>Compatibilità lampadine da verificare attentamente</li>
+            <li>Possibile sfarfallio se lampadina incompatibile</li>
+            <li>Richiede carico minimo (problematico con LED a basso wattaggio)</li>
+            <li>Spesso necessita di neutro</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pg-tags">
+        <span class="pg-tag">💰 €20–80 / dimmer</span>
+        <span class="pg-tag hl">🔆 Controllo intensità</span>
+        <span class="pg-tag">⚠️ Compatibilità critica</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 6. Strisce LED Smart ── -->
+  <div id="pg-strip" class="pg-card">
+    <div class="pg-card-header">
+      <div class="pg-card-icon">🌈</div>
+      <div class="pg-card-header-text">
+        <h3>6. Strisce LED Smart</h3>
+        <p>WLED, Govee, Gledopto, Philips Hue Lightstrip…</p>
+      </div>
+      <div class="pg-difficulty">
+        <span>Difficoltà</span>
+        <div class="pg-dots">
+          <span class="pg-dot on"></span><span class="pg-dot on"></span>
+          <span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-card-body">
+      <p>
+        Le strisce LED smart sono perfette per illuminazione d'accento, retroilluminazione TV
+        e controsoffitti. La soluzione più apprezzata dalla community HA è <strong>WLED</strong>:
+        firmware open-source installato su microcontroller ESP8266/ESP32 che si integra
+        nativamente con Home Assistant e permette effetti animati avanzati e controllo pixel per pixel.
+      </p>
+      <div class="pg-procon">
+        <div class="pg-pros">
+          <div class="pg-procon-label">Vantaggi</div>
+          <ul>
+            <li>Effetti colore e animazioni con WLED</li>
+            <li>Ottimo per illuminazione indiretta e ambientale</li>
+            <li>Costo per metro contenuto</li>
+            <li>WLED: locale, open-source, potentissimo</li>
+          </ul>
+        </div>
+        <div class="pg-cons">
+          <div class="pg-procon-label">Svantaggi</div>
+          <ul>
+            <li>WLED richiede conoscenze DIY</li>
+            <li>Alimentatori dedicati necessari</li>
+            <li>Govee e simili: dipendenza dal cloud</li>
+            <li>Non sostituisce l'illuminazione principale</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pg-tags">
+        <span class="pg-tag">💰 €15–80 / striscia</span>
+        <span class="pg-tag hl">🌈 RGB full color</span>
+        <span class="pg-tag hl">🔌 WLED locale</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Tabella comparativa ── -->
+  <h2>Tabella comparativa</h2>
+
+  <div class="pg-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Soluzione</th>
+          <th>Difficoltà</th>
+          <th>Costo medio</th>
+          <th>Colori</th>
+          <th>Dimmer</th>
+          <th>Locale</th>
+          <th>Impianto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>💡 Lampadine Smart</td>
+          <td>Bassa</td>
+          <td>€10–50 / lamp.</td>
+          <td><span class="pg-ok">✓</span></td>
+          <td><span class="pg-ok">✓</span></td>
+          <td><span class="pg-warn">Parziale</span></td>
+          <td><span class="pg-ok">No</span></td>
+        </tr>
+        <tr>
+          <td>🔲 Interruttori Smart</td>
+          <td>Media</td>
+          <td>€15–60 / pz</td>
+          <td><span class="pg-no">✗</span></td>
+          <td><span class="pg-no">✗</span></td>
+          <td><span class="pg-warn">Parziale</span></td>
+          <td><span class="pg-warn">Minimo</span></td>
+        </tr>
+        <tr>
+          <td>⚡ Relè (Shelly)</td>
+          <td>Media-Alta</td>
+          <td>€8–20 / pz</td>
+          <td><span class="pg-no">✗</span></td>
+          <td><span class="pg-no">✗</span></td>
+          <td><span class="pg-ok">✓</span></td>
+          <td><span class="pg-warn">Medio</span></td>
+        </tr>
+        <tr>
+          <td>📡 Zigbee / Z-Wave</td>
+          <td>Alta</td>
+          <td>€10–40 / dev</td>
+          <td><span class="pg-ok">✓ (lamp.)</span></td>
+          <td><span class="pg-ok">✓</span></td>
+          <td><span class="pg-ok">✓</span></td>
+          <td><span class="pg-warn">Dipende</span></td>
+        </tr>
+        <tr>
+          <td>🔆 Dimmer Smart</td>
+          <td>Alta</td>
+          <td>€20–80 / pz</td>
+          <td><span class="pg-no">✗</span></td>
+          <td><span class="pg-ok">✓</span></td>
+          <td><span class="pg-ok">✓</span></td>
+          <td><span class="pg-warn">Sì</span></td>
+        </tr>
+        <tr>
+          <td>🌈 Strisce LED</td>
+          <td>Bassa–Media</td>
+          <td>€15–80 / striscia</td>
+          <td><span class="pg-ok">✓</span></td>
+          <td><span class="pg-ok">✓</span></td>
+          <td><span class="pg-ok">WLED</span></td>
+          <td><span class="pg-ok">No</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Conclusione ── -->
+  <div class="pg-conclusion">
+    <h2>Quale soluzione scegliere?</h2>
+    <p>
+      Non esiste una risposta universale: la scelta dipende dall'impianto, dal budget,
+      dalla voglia di mettere le mani nell'elettrico e dal livello di automazione desiderato.
+    </p>
+    <p>
+      Se vuoi <strong>iniziare subito</strong> senza toccare l'impianto: lampadine smart Wi-Fi o Zigbee.
+      Se vuoi <strong>mantenere gli interruttori esistenti</strong>: relè Shelly.
+      Se costruisci un <strong>ecosistema scalabile</strong> a lungo termine: Zigbee con coordinator.
+      Se vuoi <strong>illuminazione d'atmosfera</strong> e creatività: strisce WLED.
+    </p>
+    <p>
+      In molte case la soluzione ideale è un <strong>mix di queste tecnologie</strong>:
+      lampadine Zigbee nelle stanze principali, relè Shelly negli ambienti di servizio,
+      e strisce WLED per l'illuminazione decorativa. Home Assistant le gestisce tutte
+      in modo unificato, con automazioni che coinvolgono qualsiasi dispositivo
+      indipendentemente dal protocollo.
+    </p>
+  </div>
+
+</div>
+  `
+},
+
+  {
     id: "gita-banda-palazzolo-2026",
     title: "Trasferta e concerto a Pergine Valsugana",
     date: "2026-03-18",

@@ -343,3 +343,271 @@ blockquote::before {
   font-family: 'Playfair Display', serif;
   line-height: 1;
 }
+
+/* ══════════════════════════════════════════
+   POST GUIDE — v1
+   Da aggiungere in fondo a style.css
+   Per aggiornare lo stile in futuro:
+   aggiungi .post-guida-v2 { ... } e usa
+   quella classe nei nuovi post.
+   ══════════════════════════════════════════ */
+
+.post-guida-v1 {
+  --pg-surface:  var(--card);
+  --pg-surface2: var(--bg);
+  --pg-green:    #2e7d5e;
+  --pg-red:      #b5451b;
+  --pg-radius:   12px;
+}
+
+/* ── Testo introduttivo ── */
+.post-guida-v1 .pg-intro {
+  font-size: .97rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+/* ── Tip box ── */
+.post-guida-v1 .pg-tip {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-tech);
+  border-radius: 0 var(--pg-radius) var(--pg-radius) 0;
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.post-guida-v1 .pg-tip-icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+
+/* ── Indice (TOC) ── */
+.post-guida-v1 .pg-toc {
+  background: var(--pg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--pg-radius);
+  padding: 20px 24px;
+  margin: 28px 0;
+}
+.post-guida-v1 .pg-toc-label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.post-guida-v1 .pg-toc ol {
+  list-style: none;
+  counter-reset: toc;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 24px;
+}
+@media (max-width: 500px) {
+  .post-guida-v1 .pg-toc ol { grid-template-columns: 1fr; }
+}
+.post-guida-v1 .pg-toc li {
+  counter-increment: toc;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: .88rem;
+}
+.post-guida-v1 .pg-toc li::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--accent-tech);
+  flex-shrink: 0;
+}
+.post-guida-v1 .pg-toc a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color .15s;
+}
+.post-guida-v1 .pg-toc a:hover { color: var(--accent-tech); }
+
+/* ── Scheda soluzione ── */
+.post-guida-v1 .pg-card {
+  background: var(--pg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--pg-radius);
+  overflow: hidden;
+  margin: 20px 0;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.post-guida-v1 .pg-card:hover {
+  border-color: var(--accent-tech);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.post-guida-v1 .pg-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--pg-surface2);
+}
+.post-guida-v1 .pg-card-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.post-guida-v1 .pg-card-header-text { flex: 1; }
+.post-guida-v1 .pg-card-header-text h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-family: 'Playfair Display', serif;
+}
+.post-guida-v1 .pg-card-header-text p {
+  font-size: .78rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* difficoltà a pallini */
+.post-guida-v1 .pg-difficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  flex-shrink: 0;
+}
+.post-guida-v1 .pg-difficulty span {
+  font-size: .68rem;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+.post-guida-v1 .pg-dots { display: flex; gap: 3px; }
+.post-guida-v1 .pg-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+}
+.post-guida-v1 .pg-dot.on { background: var(--accent-tech); }
+
+.post-guida-v1 .pg-card-body { padding: 18px 20px; }
+.post-guida-v1 .pg-card-body p { font-size: .93rem; margin-bottom: 14px; }
+.post-guida-v1 .pg-card-body p:last-child { margin-bottom: 0; }
+
+/* ── Pro / Contro ── */
+.post-guida-v1 .pg-procon {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+@media (max-width: 500px) {
+  .post-guida-v1 .pg-procon { grid-template-columns: 1fr; }
+}
+.post-guida-v1 .pg-pros,
+.post-guida-v1 .pg-cons {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.post-guida-v1 .pg-pros { border-left: 3px solid var(--pg-green); }
+.post-guida-v1 .pg-cons { border-left: 3px solid var(--pg-red); }
+.post-guida-v1 .pg-procon-label {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.post-guida-v1 .pg-pros .pg-procon-label { color: var(--pg-green); }
+.post-guida-v1 .pg-cons .pg-procon-label { color: var(--pg-red); }
+.post-guida-v1 .pg-procon ul { list-style: none; }
+.post-guida-v1 .pg-procon li {
+  font-size: .83rem;
+  color: var(--muted);
+  padding: 3px 0 3px 16px;
+  position: relative;
+  line-height: 1.45;
+}
+.post-guida-v1 .pg-pros li::before { content: '+'; position: absolute; left: 0; color: var(--pg-green); font-weight: 700; }
+.post-guida-v1 .pg-cons li::before { content: '−'; position: absolute; left: 0; color: var(--pg-red); font-weight: 700; }
+
+/* ── Tag info ── */
+.post-guida-v1 .pg-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.post-guida-v1 .pg-tag {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: .75rem;
+  padding: 3px 10px;
+  color: var(--muted);
+}
+.post-guida-v1 .pg-tag.hl {
+  border-color: var(--accent-tech);
+  color: var(--accent-tech);
+}
+
+/* ── Tabella comparativa ── */
+.post-guida-v1 .pg-table-wrap {
+  overflow-x: auto;
+  margin: 28px 0;
+  border-radius: var(--pg-radius);
+  border: 1px solid var(--border);
+}
+.post-guida-v1 table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .83rem;
+}
+.post-guida-v1 thead tr {
+  background: var(--bg);
+  border-bottom: 2px solid var(--border);
+}
+.post-guida-v1 th {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 11px 14px;
+  text-align: left;
+  white-space: nowrap;
+}
+.post-guida-v1 td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: middle;
+}
+.post-guida-v1 tr:last-child td { border-bottom: none; }
+.post-guida-v1 tr:hover td { background: var(--bg); }
+.post-guida-v1 .pg-ok  { color: var(--pg-green); font-weight: 600; }
+.post-guida-v1 .pg-no  { color: var(--muted); }
+.post-guida-v1 .pg-warn { color: var(--accent-content); }
+
+/* ── Box conclusione ── */
+.post-guida-v1 .pg-conclusion {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--pg-radius);
+  padding: 28px 32px;
+  margin-top: 36px;
+}
+.post-guida-v1 .pg-conclusion h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
