@@ -16,8 +16,7 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
-  {
-    id: "referendum-2026-record-affluenza",
+  { id: "referendum-2026-record-affluenza",
     title: "Referendum 2026: affluenza record nel mio seggio",
     date: "2026-03-24",
     cover: "img/posts/referendum-2026-record-affluenza.jpg",
@@ -98,8 +97,8 @@ const POSTS = [
         Il titolo di questo post nasce dai numeri: nel mio seggio abbiamo raggiunto il 70% di
         affluenza. Probabilmente altri seggi hanno fatto ancora meglio, ma la nostra percentuale
         è nettamente superiore alla media nazionale e superiore anche agli altri seggi presenti
-        nello stesso istituto scolastico. Un risultato inaspettato e, devo ammetterlo, un po'
-        motivo di orgoglio.
+        nello stesso istituto scolastico. Un risultato davvero inaspettato viste le precedenti
+        votazioni.
       </p>
 
       <h2>La novità: il seggio speciale</h2>
@@ -116,8 +115,7 @@ const POSTS = [
     `
   },
 
-  {
-    id: "domotica-luci-home-assistant",
+  { id: "domotica-luci-home-assistant",
     title: "Domotizzare le luci con Home Assistant: tutte le soluzioni",
     date: "2026-03-20",
     cover: "img/posts/domotica-luci-home-assistant.jpg",
@@ -488,8 +486,7 @@ const POSTS = [
     `
   },
 
-  {
-    id: "gita-banda-palazzolo-2026",
+  { id: "gita-banda-palazzolo-2026",
     title: "Trasferta e concerto a Pergine Valsugana",
     date: "2026-03-18",
     cover: "",
@@ -507,8 +504,7 @@ const POSTS = [
     `
   },
 
-  {
-    id: "referendum-2026",
+  { id: "referendum-2026",
     title: "Presidente di Seggio, Referendum 2026",
     date: "2026-03-18",
     cover: "",
@@ -519,7 +515,7 @@ const POSTS = [
     tags: ["lavoro", "seggio", "referendum"],
     excerpt: "Sabato 21 marzo c'è l'insediamento dei seggi.",
     content: `
-      <p>Questo weekend sarà pieno per me. infatti sono stato nominato presidente si seggio per il <a href="https://it.wikipedia.org/wiki/Referendum_costituzionale_in_Italia_del_2026" target="_blank" rel="noopener noreferrer">
+      <p>Questo weekend sarà pieno per me. Infatti sono stato nominato presidente si seggio per il <a href="https://it.wikipedia.org/wiki/Referendum_costituzionale_in_Italia_del_2026" target="_blank" rel="noopener noreferrer">
       "Referendum Giustizia 2026"</a></p>
       <p>Sabato alle 16:00 c'è l'insediamento del seggio. Per chi non se ne intendesse è uno dei momenti in cui c'è più lavoro per 
       i componenti del seggio dato che bisogna firmare e timbrare tutte le schede. Oltre a quello bisogna allestire tutta l'aula 
@@ -534,8 +530,7 @@ const POSTS = [
     `
   },
 
-  {
-    id: "ricordo-vittime-covid-2026",
+  { id: "ricordo-vittime-covid-2026",
     title: "In memoria delle vittime del COVID-19",
     date: "2026-03-18",
     cover: "img/posts/ricordo-vittime-covid-2026.jpg",
@@ -558,8 +553,7 @@ const POSTS = [
     `
   },
 
-  {
-    id: "concerto-estate-cusano-2026",
+  { id: "concerto-estate-cusano-2026",
     title: "Concerto d'Estate — Banda di Cusano Milanino",
     date: "2026-03-14",
     cover: "",
@@ -577,8 +571,7 @@ const POSTS = [
     `
   },
 
-  {
-    id: "concerto-palazzolo-cava-2026",
+  { id: "concerto-palazzolo-cava-2026",
     title: "Concerto nell'anfiteatro — Banda di Palazzolo Milanese",
     date: "2026-03-16",
     cover: "",
@@ -597,8 +590,7 @@ const POSTS = [
     `
   },
 
-  {
-    id: "pubblicazioni-smart-home",
+  { id: "pubblicazioni-smart-home",
     title: "La mia esperienza con la smart home",
     date: "2026-03-02",
     cover: "img/loghi/home_assistant_logo.png",
@@ -615,8 +607,7 @@ const POSTS = [
     `
   },
 
-  {
-    id: "doremitici-carnevale-2026",
+  { id: "doremitici-carnevale-2026",
     title: "Carnevale 2026",
     date: "2026-02-21",
     cover: "img/posts/doremitici-carnevale-2026.jpg",
@@ -641,8 +632,7 @@ const POSTS = [
     `
   },
 
-  {
-    id: "doremitici-serata-gruppo-missionario",
+  { id: "doremitici-serata-gruppo-missionario",
     title: "Serata Gruppo Missionario ''Io sono l'altro''",
     date: "2026-02-20",
     cover: "img/posts/doremitici-serata-gruppo-missionario.jpg",
