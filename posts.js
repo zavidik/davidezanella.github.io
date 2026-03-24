@@ -17,6 +17,106 @@
 
 const POSTS = [
   {
+    id: "referendum-2026-record-affluenza",
+    title: "Referendum 2026: affluenza record nel mio seggio",
+    date: "2026-03-24",
+    cover: "img/posts/referendum-2026-record-affluenza.jpg",
+    pinned: false,
+    tags: ["lavoro"],
+    excerpt: "La mia quarta esperienza come presidente di seggio, in occasione del referendum costituzionale 2026. Un weekend impegnativo, un'affluenza inaspettata e una novità: il seggio speciale.",
+    content: `
+      <p>
+        Questo weekend ho svolto il ruolo di presidente di seggio per il referendum costituzionale.
+        Come riportato dai telegiornali, c'è stato un record di affluenza rispetto agli ultimi anni,
+        e il mio seggio non ha fatto eccezione.
+      </p>
+
+      <h2>Come sono organizzati i giorni</h2>
+      <p>
+        Per chi non lo sapesse, fare parte di un seggio elettorale significa impegnarsi
+        su più giorni consecutivi. La scaletta è sempre la stessa:
+      </p>
+
+      <div class="timeline-container">
+        <div class="timeline">
+          <h4>Sabato</h4>
+          <p>🏛️ <strong>Dalle 16:00</strong> — Costituzione del seggio</p>
+        </div>
+        <div class="timeline">
+          <h4>Domenica</h4>
+          <p>🗳️ <strong>Dalle 7:00 alle 23:00</strong> — Votazione</p>
+        </div>
+      </div>
+      <div class="timeline-container">
+        <div class="timeline">
+          <h4>Lunedì mattina</h4>
+          <p>🗳️ <strong>Dalle 7:00 alle 15:00</strong> — Votazione</p>
+        </div>
+        <div class="timeline">
+          <h4>Lunedì pomeriggio</h4>
+          <p>📊 <strong>Dalle 15:00</strong> — Scrutinio</p>
+        </div>
+      </div>
+
+      <p>
+        Il compenso è decisamente basso se paragonato all'impegno richiesto, ma penso che
+        pochi lo facciano solo per i soldi. Quello che personalmente mi gratifica, ogni volta,
+        è qualcosa di diverso: organizzare e portare a buon fine tutte le operazioni del seggio;
+        lavorare a stretto contatto con persone inizialmente sconosciute per molte ore di fila;
+        interfacciarsi con i dipendenti comunali e le forze dell'ordine non come "un cittadino
+        allo sportello", ma come parte di una squadra con un obiettivo comune.
+      </p>
+      <p>
+        Non è sempre semplice, e un po' di stress è inevitabile. Ma come tutte le cose che
+        richiedono fatica e impegno, alla fine sono gratificanti. Quando si presenta un problema,
+        bisogna trovare una soluzione senza farsi prendere dal panico: le operazioni del seggio
+        devono andare avanti in ogni caso.
+      </p>
+
+      <h2>La quarta volta si impara ancora</h2>
+      <p>
+        Questa è stata la mia quarta esperienza al seggio, e ogni volta si porta a casa qualcosa
+        in più. Si affinano quei piccoli accorgimenti che rendono più agevole lo svolgimento delle
+        attività — e quando ne avrò raccolti abbastanza, vorrei scrivere un post dedicato, sperando
+        possa essere utile a qualche altro presidente di seggio alle prime armi.
+      </p>
+      <p>
+        Il consiglio principale che mi sento di dare a chi vuole cimentarsi in questa esperienza
+        è semplice: <strong>leggi il libretto</strong>. Cercando online "Libretto operazioni seggio
+        elettorale" si trova facilmente il PDF completo. Contiene praticamente tutto quello che
+        c'è da sapere sulle operazioni di voto.
+      </p>
+      <p>
+        Ho scritto "praticamente" perché una parte della conoscenza si acquisisce solo sul campo:
+        alcune dinamiche variano da Comune a Comune, e l'interazione con le persone e con i
+        dipendenti comunali porta sempre qualche piccola sorpresa. Per tutto il resto, però,
+        il libretto è esaustivo.
+      </p>
+
+      <h2>Affluenza record: 70%</h2>
+      <p>
+        Il titolo di questo post nasce dai numeri: nel mio seggio abbiamo raggiunto il 70% di
+        affluenza. Probabilmente altri seggi hanno fatto ancora meglio, ma la nostra percentuale
+        è nettamente superiore alla media nazionale e superiore anche agli altri seggi presenti
+        nello stesso istituto scolastico. Un risultato inaspettato e, devo ammetterlo, un po'
+        motivo di orgoglio.
+      </p>
+
+      <h2>La novità: il seggio speciale</h2>
+      <p>
+        Per la prima volta, il seggio a cui sono stato assegnato aveva un <strong>seggio speciale
+        associato</strong>: si tratta del seggio itinerante che si reca in ospedali e case di cura
+        per raccogliere il voto di chi non può recarsi fisicamente alle urne.
+      </p>
+      <p>
+        Quando un seggio ordinario ha un seggio speciale associato, deve tenere conto anche dei
+        voti raccolti da quest'ultimo nelle operazioni di scrutinio. Niente di complicato in
+        realtà, ma era una novità per me e sono contento che sia andato tutto liscio.
+      </p>
+    `
+  },
+
+  {
     id: "domotica-luci-home-assistant",
     title: "Domotizzare le luci con Home Assistant: tutte le soluzioni",
     date: "2026-03-20",
