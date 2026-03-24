@@ -22,7 +22,7 @@ const POSTS = [
     date: "2026-03-24",
     cover: "img/posts/referendum-2026-record-affluenza.jpg",
     pinned: false,
-    tags: ["lavoro"],
+    tags: ["lavoro", "seggio", "referendum"],
     excerpt: "La mia quarta esperienza come presidente di seggio, in occasione del referendum costituzionale 2026. Un weekend impegnativo, un'affluenza inaspettata e una novità: il seggio speciale.",
     content: `
       <p>
