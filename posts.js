@@ -16,6 +16,157 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  {
+    id: "gita-banda-palazzolo-pergine-2026",
+    title: "Gita della banda a Pergine Valsugana",
+    date: "2026-04-03",
+    cover: "img/posts/gita-banda-palazzolo-pergine-2026.jpg",
+    pinned: false,
+    tags: ["musica", "banda palazzolo", "concerto"],
+    excerpt: "Un weekend tra castle, concerti, eroismi all'autogrill e promemoria notturni su Alexa. Il racconto della gita della banda di Palazzolo a Pergine Valsugana.",
+    content: `
+      <p>
+        Lo scorso weekend la banda di Palazzolo è partita alla volta di Pergine Valsugana,
+        in Trentino. Un weekend tra un concerto, una visita guidata, una cena a buffet,
+        una sagra dei Vigili del fuoco e qualche avventura notturna in hotel.
+      </p>
+
+      <h2>Il viaggio — e gli eroi dell'autogrill</h2>
+      <p>
+        Siamo partiti sabato mattina alle 8:30 dall'oratorio di Palazzolo. Il viaggio è filato
+        liscio, con una sola pausa all'autogrill, ma non senza colpi di scena.
+      </p>
+      <p>
+        Prima di risalire sul pullman ho notato in lontananza un motociclista in difficoltà.
+        Insieme a Tony e Diego ci siamo avvicinati: la batteria lo aveva abbandonato. Lo abbiamo
+        spinto quel tanto che bastava per farlo ripartire e siamo tornati al pullman da eroi —
+        Ilaria ha filmato tutto. Piccola cosa, ma fa sempre piacere dare una mano.
+      </p>
+
+      <h2>Arrivo a Pergine e il castello</h2>
+      <p>
+        A Pergine eravamo divisi su due hotel, perché uno solo non bastava per tutti.
+        Io e la maggior parte dei bandisti alloggiavamo all'"Al Ponte"; un gruppo più ristretto
+        alla "La Rotonda", a pochi minuti di pullman. Dopo esserci sistemati, abbiamo pranzato
+        tutti insieme.
+      </p>
+      <p>
+        Nel pomeriggio era in programma la visita guidata al Castello di Pergine. Una giornata
+        molto ventosa ma soleggiata: entrando e uscendo dalle varie parti del castello la
+        temperatura cambiava continuamente, e probabilmente è lì che ho preso il raffreddore
+        (piccola anticipazione). La visita è stata comunque piacevole, anche per chi — come me —
+        non è un appassionato di storia o d'arte.
+      </p>
+
+      <h2>Il concerto al Teatro di Pergine</h2>
+      <p>
+        Tornati agli hotel verso le 17:30, ci siamo preparati e alle 18:30 siamo partiti per
+        il Teatro di Pergine. Dopo la prova di assestamento è arrivato l'unico momento negativo
+        della gita.
+      </p>
+      <p>
+        Prima della partenza avevamo chiesto e ottenuto conferma che avremmo potuto registrare
+        il concerto. Avevo preparato tutto: microfoni, aste, cavi, videocamere, mixer, computer.
+        Subito dopo la prova ho iniziato a sistemare le aste con l'aiuto di altri, ma al momento
+        di tirare i cavi un addetto del teatro ci ha bloccati: non c'era più tempo, stavano per
+        aprire le porte al pubblico e non volevano che si vedesse ancora del materiale in giro.
+      </p>
+      <p>
+        Eravamo in diversi, i microfoni erano quattro, e il tempo c'era. Difficile non
+        arrabbiarsi. Ho portato tutto quell'equipaggiamento per l'intero weekend — zaino pesante
+        in spalla anche il giorno seguente — senza poterlo usare.
+      </p>
+      <p>
+        Per fortuna avevo il mio Shure MV88+ come backup: l'ho posizionato subito dietro
+        il direttore e ho registrato da iPhone. Alla fine l'audio è venuto bene, e una persona
+        tra il pubblico (grazie Tiziana) ha ripreso i video. Ho già caricato tutto su YouTube:
+        <a href="https://www.youtube.com/playlist?list=PL1o1uYsfqEiOmig3LiwkRfjN-a1xNFRZ_" target="_blank" rel="noopener">
+          qui trovate la playlist del concerto
+        </a>.
+      </p>
+      <p>
+        Il concerto in sé è andato bene. Il teatro era poco affollato — una sessantina di persone —
+        ma il Teatro di Pergine è davvero bellissimo, grande e con un'acustica eccellente.
+      </p>
+
+      <h2>Cena, sagra e avventure notturne</h2>
+      <p>
+        Dopo il concerto siamo andati a piedi alla sede della banda di Pergine, che ci ha
+        ospitato per una cena a buffet. Molto generosi: tavoli pieni, tutto ottimo.
+      </p>
+      <p>
+        Verso mezzanotte ci siamo spostati. Quella sera a Pergine i Vigili del fuoco
+        organizzavano una festa — una specie di sagra con tavoli all'aperto e al coperto,
+        e un dj set all'interno della sede. C'era anche uno stand con un gioco curioso:
+        bisognava lanciare delle rondelle di ferro per colpire delle uova sode, che erano
+        il premio. Con tre colpi consecutivi si vinceva un fusto di birra. Un modo creativo
+        per raccogliere fondi, anche se le uova sode come premio rimangono una scelta
+        quantomeno originale.
+      </p>
+      <p>
+        Io e Gabriele non ci siamo trattenuti a lungo alla "Festa dei Ovi": la stanchezza si
+        faceva sentire, avevo lo zaino sulle spalle e Gabriele portava il mio trombone
+        (che avrei dovuto lasciare sul pullman, con il senno di poi). Siamo tornati a piedi
+        all'hotel.
+      </p>
+      <p>
+        Dopo essermi cambiato sono uscito per raggiungere Elisa, ma aspettando davanti alla
+        camera 305 ho visto uscire dalla 304 Tony, Lara, Ilaria, Paco, Mattia e Isabel — quelli
+        della sagra, evidentemente già rientrati. Mentre cercavo di capire cosa stesse succedendo,
+        ho scoperto che Elisa non era nella 305 ma nella 205, dove nel frattempo si era addormentata.
+      </p>
+      <p>
+        Nel frattempo mi sono unito al gruppo, che girava per l'hotel combinandone di ogni —
+        compreso suonare il corno alle due di notte. Scesi al piano della reception deserta,
+        in piena ristrutturazione, abbiamo trovato un'Amazon Echo appoggiata su una sedia che
+        riproduceva musica di sottofondo. Opportunità da non perdere: abbiamo impostato due
+        promemoria per la mattina seguente, alle 9:30 e alle 9:45, con messaggi assurdi che
+        alle tre di notte — nel frattempo era scattato il cambio dell'ora — facevano ridere molto.
+      </p>
+      <p>
+        Elisa mi ha risposto nel mentre, sono salito a salutarla. Nessuno dei due stava
+        benissimo: il vento del castello aveva fatto i suoi danni, e lei era alle prese anche
+        con le allergie primaverili.
+      </p>
+
+      <h2>Domenica: Trento, pranzo e rientro</h2>
+      <p>
+        La mattina seguente, a colazione, eravamo tutti lì con gli occhi puntati sull'orologio
+        in attesa dei promemoria dell'Alexa. Il primo è arrivato, ma con un volume troppo basso
+        per sentirlo da tutta la sala. Del secondo non c'è stata traccia — mistero irrisolto.
+        Ci siamo accontentati del nostro "scherzone"...
+      </p>
+      <p>
+        Dopo colazione abbiamo caricato gli zaini e siamo ripartiti verso Trento, dove era
+        in programma una visita guidata per il centro storico, terminata verso le 12:30.
+        Il pranzo era libero: ci è voluto un po' per decidere dove andare, il gruppo si è
+        frammentato e io sono rimasto con Elisa e altri cinque ragazzi. Siamo finiti in un
+        bel ristorante: taglieri di affettati e formaggi per iniziare, poi io ed Elisa abbiamo
+        condiviso un piatto di pasta e una pizza, entrambi con abbinamenti particolari che
+        onestamente non ricordo. Strudel per chiudere.
+      </p>
+      <p>
+        Dopo pranzo ci siamo fermati in un parco vicino al punto di raccolta del pullman,
+        riparandoci dal vento in un bar con un caffè. Alle 16:30 tutti a bordo e via verso casa.
+        La maggior parte dormiva già — le foto addormentati hanno spopolato nel gruppo.
+        Una pausa veloce all'autogrill, nessun motociclista da salvare questa volta, e verso
+        le 20:00 eravamo di ritorno a Palazzolo.
+      </p>
+
+      <h2>In conclusione</h2>
+      <p>
+        È stata una gita davvero piacevole. A parte il dispiacere per la registrazione
+        (risolto alla meno peggio) e il raffreddore che mi sono portato a casa — lunedì avevo
+        la febbre, per fortuna durata solo un giorno, anche se mentre scrivo ho ancora il naso
+        che cola — il bilancio è decisamente positivo.
+      </p>
+      <p>
+        Sono felice del gruppo che si è creato in questa banda. C'è un bel mix di età, un clima
+        unito, e si scherza tanto. Non si può chiedere di meglio.
+      </p>
+    `
+  },
+
   { id: "referendum-2026-record-affluenza",
     title: "Referendum 2026: affluenza record nel mio seggio",
     date: "2026-03-24",
