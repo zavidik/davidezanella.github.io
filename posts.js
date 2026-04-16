@@ -16,8 +16,26 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
-  {
-    id: "gita-banda-palazzolo-pergine-2026",
+  { id: "concerto-mamma-cusano-2026",
+    title: "Concerto per la Festa della Mamma — Banda di Cusano Milanino",
+    date: "2026-04-16",
+    cover: "",
+    pinned: true,
+    eventDate: "2026-05-10",
+    eventTime: "",
+    eventPlace: "Cusano Milanino",
+    tags: ["musica", "banda cusano", "concerto"],
+    excerpt: "Concerto per la Festa della Mamma — Banda di Cusano Milanino",
+    content: `
+      <p>Vi aspettiamo al <strong>Concerto per la Festa della Mamma</strong> della Banda di Cusano Milanino!</p>
+      <p>Passa un pomeriggio primaverile all'aperto, magari con un gelato 🍦 e con della bella musica!</p>
+      <p>L'ingresso è libero e aperto a tutti.</p>
+      <p>Per il <strong>luogo e l'orario preciso</strong> ci saranno aggiornamenti su questa pagina (arriverà anche la locandina!)</p>
+      <p>📅 10 Maggio 2026<br>📍 Cusano Milanino</p>
+    `
+  },
+
+  { id: "gita-banda-palazzolo-pergine-2026",
     title: "Gita della banda a Pergine Valsugana",
     date: "2026-04-03",
     cover: "img/posts/gita-banda-palazzolo-pergine-2026.jpg",
@@ -718,6 +736,7 @@ const POSTS = [
       <p>Vi aspettiamo al <strong>Concerto d'Estate</strong> della Banda di Cusano Milanino!</p>
       <p>Una serata all'aperto con un programma incredibile a tema "Cartoni animati"!</p>
       <p>L'ingresso è libero e aperto a tutti.</p>
+      <p>Per il luogo ci saranno aggiornamenti su questa pagina (arriverà anche la locandina!)</p>
       <p>📅 20 Giugno 2026 · ore 21:00<br>📍 Cusano Milanino</p>
     `
   },
@@ -737,6 +756,7 @@ const POSTS = [
       <p>Il luogo è bellissimo: l'anfiteatro della Cava di Paderno Dugnano. Il pubblico che verrà a sentirci potrà ascoltare la musica 
       e guardare il paesaggio suggestivo di quel meraviglio parco</p>
       <p>Il concerto è di pomeriggio e il mio consiglio è di arrivare al parco molto in anticipo per avere anche il tempo di fare una passeggiata e goderselo tutto.</p>
+      <p>Per <strong>l'orario preciso</strong> ci saranno aggiornamenti su questa pagina (arriverà anche la locandina!)</p>
       <p>📅 24 Maggio 2026 · pomeriggio<br>📍 Paderno Dugnano, Anfiteatro Parco La Cava </p>
     `
   },
