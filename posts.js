@@ -16,6 +16,76 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "doremitici-secondo-incontro-scuola-fisogni",
+    title: "Secondo incontro alla scuola primaria Fisogni",
+    date: "2026-04-21",
+    cover: "img/posts/doremitici-secondo-incontro-scuola-fisogni.jpg",
+    pinned: false,
+    eventDate: "2026-04-20",
+    eventTime: "14:30",
+    eventPlace: "Paderno Dugnano",
+    tags: ["musica", "doremitici"],
+    excerpt: "Secondo incontro con i DoReMitici alla scuola primaria Fisogni di Palazzolo Milanese, con la classe 4C. Parte del progetto \"Un Pentagramma di solidarietà\", nell'ambito del bando Ri-Generare Legami.",
+    content: `
+      <p>
+        Ieri pomeriggio, con alcuni componenti del gruppo DoReMitici, abbiamo tenuto il secondo
+        incontro con i bambini della classe 4C presso la scuola primaria Fisogni di Palazzolo Milanese.
+      </p>
+  
+      <h2>Il contesto: bando Ri-Generare Legami</h2>
+      <p>
+        Per l'anno 2025–2026 i DoReMitici hanno partecipato al bando
+        <a href="https://www.ambitogarbagnatemilanese.it/servizi/notizie/notizie_fase02.aspx?ID=6074" target="_blank" rel="noopener noreferrer">Ri-Generare Legami</a>,
+        con un progetto chiamato <strong>"Un Pentagramma di solidarietà"</strong>, il cui obiettivo
+        è portare la musica al maggior numero di persone possibile.
+      </p>
+      <p>
+        Ci siamo concentrati in particolare su anziani e bambini: con i primi abbiamo suonato in
+        alcune <a href="https://davidezanella.altervista.org/wp-content/DoReMitici/events/2025-12-13_Concerto_alla_RSA_Bernardelli/index.php" target="_blank" rel="noopener noreferrer">RSA</a>, 
+        portando momenti di serenità e un po' di variazione nella routine della casa di
+        riposo. Con i bambini l'obiettivo è diverso: far conoscere loro la musica e gli strumenti
+        della banda, così che possano scoprire un interesse verso questo mondo e magari coltivare
+        una passione che non sapevano di avere.
+      </p>
+      <p>
+        A Paderno Dugnano, e in particolare nella frazione di Palazzolo Milanese, il
+        <a href="banda-palazzolo.html">Corpo Musicale Santa Cecilia 1900</a> è già molto attivo
+        nelle scuole con progetti simili — tra cui
+        <a href="scuola-che-sbanda.html">La Scuola che sBanda</a>, di cui faccio parte, svolto in
+        altre due scuole elementari della città. Essendo Paderno Dugnano abbastanza grande, però,
+        alcune scuole non sono ancora state raggiunte. Grazie a questo bando, come DoReMitici siamo
+        riusciti a portare un'introduzione al mondo della musica anche a questi bambini.
+      </p>
+  
+      <h2>L'incontro</h2>
+      <p>
+        L'incontro è durato due ore e ha toccato diversi aspetti della musica bandistica.
+        Abbiamo presentato gli strumenti della banda e spiegato come vengono classificati
+        (fiati, ottoni, legni, percussioni…), il ruolo del direttore — che permette a tante
+        persone di suonare insieme rimanendo in sincronia — e le differenze di suono e timbro
+        tra i vari strumenti, imparando a riconoscerli all'ascolto.
+      </p>
+      <p>
+        I bambini hanno partecipato con entusiasmo: a turno hanno provato a dirigere i loro
+        compagni, sperimentando dinamiche e variazioni di velocità. Tutti insieme abbiamo svolto
+        anche due brevi esercizi di solfeggio.
+      </p>
+  
+      <h2>La risposta dei bambini e i prossimi passi</h2>
+      <p>
+        Al termine dell'incontro, bambini e maestre si sono mostrati entusiasti e ci hanno
+        invitato a tornare per incontri successivi. Fa davvero piacere, e ci fa capire che c'è
+        una buona prospettiva per avviare progetti più duraturi anche in questa scuola.
+      </p>
+      <p>
+        Per il momento, nell'ambito di questo bando, ci resta un ultimo incontro con un'altra
+        classe, fissato per il 9 maggio. Per il futuro non c'è ancora nulla di definito, ma
+        l'accoglienza è stata così calorosa da lasciarci ben sperare.
+      </p>
+      <p>Lascio qui il <a href="https://davidezanella.altervista.org/wp-content/DoReMitici/events/2026-04-20_Secondo_incontro_scuola_Fisogni/index.php" target="_blank" rel="noopener noreferrer">link all'articolo sul sito dei DoReMitici</a></p>
+    `
+  },
+
   { id: "concerto-mamma-cusano-2026",
     title: "Concerto per la Festa della Mamma — Banda di Cusano Milanino",
     date: "2026-04-16",
@@ -288,6 +358,7 @@ const POSTS = [
     title: "Domotizzare le luci con Home Assistant: tutte le soluzioni",
     date: "2026-03-20",
     cover: "img/posts/domotica-luci-home-assistant.jpg",
+    showInGallery: false,
     pinned: false,
     tags: ["tech"],
     excerpt: "Lampadine smart, relè, Zigbee, dimmer, strisce LED: analisi completa di tutte le soluzioni per automatizzare l'illuminazione con Home Assistant, con vantaggi e svantaggi di ognuna.",
@@ -765,6 +836,7 @@ const POSTS = [
     title: "La mia esperienza con la smart home",
     date: "2026-03-02",
     cover: "img/loghi/home_assistant_logo.png",
+    showInGallery: false,
     pinned: false,
     tags: ["tech", "home assistant", "smart home"],
     excerpt: "Da alcuni anni uso Home Assistant, volevo provare a pubblicare alcune delle mie idee e configurazioni.",
@@ -811,7 +883,7 @@ const POSTS = [
     eventDate: "2026-02-18",
     eventTime: "20:45",
     eventPlace: "Paderno Dugnano",
-    tags: ["musica", "doremitici", "evento"],
+    tags: ["musica", "doremitici"],
     excerpt: "I DoReMitici hanno partecipato a una serata organizzata dal Gruppo Missionario presso la Cineteca Milano Metropolis.",
     content: `
       <p>Il 18 febbraio è stata una serata piacevole e con grandi spunti di riflessione. Per leggere l'articolo completo sul sito dei DoReMitici, 
