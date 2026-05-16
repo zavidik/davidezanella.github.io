@@ -16,6 +16,124 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+
+  { id: "concerto-cusano-2-giugno-2026-bacheca",
+    title: "Concerto per la Festa della Repubblica — Banda di Cusano Milanino",
+    date: "2026-05-16",
+    cover: "",
+    showInGallery: false,
+    pinned: true,
+    eventDate: "2026-06-02",
+    eventTime: "16:00",
+    eventPlace: "Cusano Milanino",
+    tags: ["musica", "banda cusano", "concerto"],
+    excerpt: "Concerto per la Festa della Repubblica — Banda di Cusano Milanino",
+    content: `
+      <p>C'è poco da dire, un bel concerto nel giorno in cui si festeggia la festa della Repubblica italiana.</p>
+      <p>L'ingresso è libero e aperto a tutti.</p>
+      <p>📅 2 Giugno 2026 · ore 16:00<br>📍 Cusano Milanino</p>
+    `
+  },
+  { id: "saggio-scuola-che-sbanda-2026-bacheca",
+    title: "Saggio di fine anno — La Scuola che sBanda",
+    date: "2026-05-16",
+    cover: "",
+    showInGallery: false,
+    pinned: true,
+    eventDate: "2026-05-28",
+    eventTime: "21:00",
+    eventPlace: "Palazzolo Milanese",
+    tags: ["musica"],
+    excerpt: "Il saggio di fine anno de La Scuola che sBanda — tema: Shrek. Vieni a sentire i nostri piccoli musicisti!",
+    content: `
+      <p>Giovedì 28 maggio si tiene il <strong>saggio di fine anno</strong> del progetto <a href="scuola-che-sbanda.html">La Scuola che sBanda</a>, il percorso con cui la <a href="banda-palazzolo.html">Banda di Palazzolo Milanese</a> avvicina i bambini delle elementari alla musica bandistica.</p>
+
+      <p>Quest'anno il tema è… <strong>Shrek</strong>! 🟢</p>
+
+      <p>Sul palco ci saranno due gruppi:</p>
+      <ul>
+        <li><strong>Gli Esploratori</strong> — i bambini di terza elementare al loro primo anno: suoneranno il loro primo brano con lo strumento, accompagnato da momenti coreutici e percussionistici.</li>
+        <li><strong>Gli Eroi</strong> — i veterani, con già un anno o più di percorso: tre brani strumentali e qualche sorpresa finale.</li>
+      </ul>
+
+      <p>A chiudere la serata, come da tradizione, tutti i maestri sul palco insieme per un brano — ovviamente a tema Shrek. E sì, ci sarà qualche travestimento. 🤫</p>
+
+      <p>L'ingresso è libero e aperto a tutti. Vi aspettiamo!</p>
+      <p>📅 28 Maggio 2026 · ore 21:00<br>📍 Palestra dell'oratorio di Palazzolo Milanese, Viale Bagatti 3</p>
+    `
+  },
+
+  { id: "raduno-bandistico-cogliate-2026-bacheca",
+    title: "Raduno bandistico a Cogliate - Banda di Palazzolo",
+    date: "2026-05-16",
+    cover: "",
+    showInGallery: false,
+    pinned: true,
+    eventDate: "2026-05-17",
+    eventTime: "15:15",
+    eventPlace: "Cogliate",
+    tags: ["musica", "banda palazzolo", "servizio"],
+    excerpt: "Tante bande a Cogliate",
+    content: `
+      <p>Domenica 17 maggio c'è un raduno bandistico a Cogliate. Non so di preciso come sarà organizzato, io sarà lì insieme alla <a href="banda-palazzolo.html">Banda di Palazzolo</a>.</p>
+      <p>Essendo un raduno ci saranno altre bande musicali che suoneranno e alla fine faremo sicuramente qualcosa tutti insieme!</p>
+      <p>La nostra partenza sarà da via Marconi angolo via Pascoli e il termine della manifestazione è previsto intorno alle 18:00. Sarà una bella 
+      giornata di Sole e per chi verrà a sentire sarà perfetto per una bella passeggiata con un po' di musica!</p>
+      <p>📅 17 Maggio 2026 · ore 15:15<br>📍 via Marconi angolo Via Pascoli, Cogliate</p>
+    `
+  },
+
+  { id: "junior-band-palazzolo-civil-week-2026",
+    title: "Prima volta con l'euphonium — Junior Band a Paderno Dugnano",
+    date: "2026-05-16",
+    cover: "img/posts/junior-band-palazzolo-civil-week-2026.jpg",
+    tags: ["musica", "banda palazzolo", "junior band", "concerto"],
+    excerpt: "Per la Civil Week di Paderno Dugnano ho suonato con la Junior Band della Banda di Palazzolo — e per la prima volta in concerto ho imbracciato l'euphonium.",
+    content: `
+      <p>Il 9 maggio sono andato ad aiutare la <a href="banda-palazzolo.html">Junior Band della Banda di Palazzolo Milanese</a> per un concerto all'aperto davanti alla Biblioteca Tilane di Paderno Dugnano, in occasione della <strong>Civil Week</strong> — la settimana in cui le associazioni del territorio si animano e si mostrano alla città.</p>
+
+      <h4>Prima volta con l'euphonium</h4>
+      <p>La novità per me era lo strumento: ho suonato con l'<strong>euphonium</strong>, e questa è stata la mia prima volta in concerto con questo strumento. Il repertorio non era tecnicamente proibitivo, ma la sfida c'era lo stesso — sono abituato alla coulisse del trombone, e ritrovarsi con i pistoni in mano è un'altra storia. Le dita non sempre hanno seguito le intenzioni, ma l'importante è esserci stato.</p>
+      <p>Non ho intenzione di studiare l'euphonium seriamente — per ora tutta la mia concentrazione va al trombone — però ammetto che le parti in banda sono sempre molto belle. Chissà, magari qualche altra occasione si presenterà. 🎶</p>
+
+      <h4>Il programma</h4>
+      <p>Il repertorio spaziava parecchio: <em>A Joyful Journey</em>, <em>Terracotta Warriors</em>, <em>Darklands March</em>, <em>Moscow 1941</em>, <em>Pirates of the Caribbean</em> e altri brani. Un programma vario e adatto a un concerto all'aperto.</p>
+
+      <h4>Il finale migliore</h4>
+      <p>Dopo il concerto la banda ha offerto a tutti un gelato 🍦 — il modo perfetto per chiudere un pomeriggio di musica in una bella giornata di maggio.</p>
+
+      <h4>Ascolta la banda</h4>
+      <p>Se vuoi seguire i concerti della <a href="banda-palazzolo.html">Banda di Palazzolo Milanese</a> e tutti i suoi progetti, puoi tenere d'occhio la mia playlist YouTube dedicata: <a href="https://youtube.com/playlist?list=PL1o1uYsfqEiNMoUeWcZdVanJ-cvprRj1a&si=E7f1Jjvo0TrGmrY0" target="_blank" rel="noopener">Banda di Palazzolo — playlist</a>.</p>
+    `
+  },
+
+  { id: "concerto-mamma-cusano-2026",
+    title: "Concerto per la Festa della Mamma 2026 — com'è andata",
+    date: "2026-05-16",
+    cover: "img/posts/concerto-mamma-cusano-2026.jpg",
+    showInGallery: true,
+    tags: ["musica", "banda cusano", "concerto"],
+    relatedPost: {
+      id: "concerto-mamma-cusano-2026-bacheca",
+      label: "📌 Questo evento era stato annunciato qui:"
+    },
+    excerpt: "Un bel pomeriggio di musica al Teatro Papa Giovanni XXIII con la Banda di Cusano Milanino: dai brani dedicati alle mamme all'assaggio del concerto d'estate.",
+    content: `
+      <p>Il 10 maggio, come ormai tradizione degli ultimi anni, la <a href="banda-cusano.html">Banda di Cusano Milanino</a> ha celebrato la Festa della Mamma con il suo concerto al Teatro Papa Giovanni XXIII. Il pubblico di Cusano è sempre caloroso e affezionato, e anche questa volta non ha deluso.</p>
+
+      <h4>Un repertorio tutto per lei</h4>
+      <p>Il filo conduttore era naturalmente la mamma — e il programma lo ha onorato alla grande. Tra i brani più applauditi: <em>Fatti mandare dalla mamma</em> di Gianni Morandi, <em>Viva la Mamma</em> di Bennato, la classicissima <em>Mamma</em> di Bixio e l'immancabile <em>Mamma Mia</em> degli ABBA. Un piccolo omaggio anche a Gino Paoli, scomparso di recente, con <em>Sapore di Sale</em>.</p>
+      <p>Molti degli arrangiamenti portano la firma del nostro maestro Stefano Bertoni — il cui tocco si riconosce sempre.</p>
+
+      <h4>Un assaggio dell'estate</h4>
+      <p>Nel mezzo del programma, qualche brano di colonne sonore di cartoni animati ha fatto drizzare le orecchie ai più attenti: non era un caso. È un piccolo antipasto del <strong>Concerto d'Estate del 20 giugno</strong>, che sarà interamente dedicato ai cartoni animati. È il concerto di punta dell'anno, e le aspettative sono altissime.</p>
+      <p>Giusto per stuzzicare un po': tra i brani ci sarà un medley scritto da Stefano con <em>Tiger Man</em>, <em>Mila e Shiro</em>, <em>Ufo Robot Goldrake</em>... e non solo. 🤫</p>
+
+      <h4>Rivivi il concerto</h4>
+      <p>Nei prossimi mesi usciranno su YouTube alcuni video dei brani eseguiti. Puoi seguire il canale ufficiale della <a href="https://www.youtube.com/@corpomusicales.cecilia-cus1333" target="_blank" rel="noopener">Banda di Cusano Milanino - Corpo Musicale S. Cecilia</a> — oppure il mio canale personale, dove pubblicherò alcuni spezzoni registrati direttamente dal mio leggio: <a href="https://www.youtube.com/@davide.zanella" target="_blank" rel="noopener">@davide.zanella</a>.</p>
+    `
+  },
+
   { id: "doremitici-secondo-incontro-scuola-fisogni",
     title: "Secondo incontro alla scuola primaria Fisogni",
     date: "2026-04-21",
@@ -86,16 +204,20 @@ const POSTS = [
     `
   },
 
-  { id: "concerto-mamma-cusano-2026",
+  { id: "concerto-mamma-cusano-2026-bacheca",
     title: "Concerto per la Festa della Mamma — Banda di Cusano Milanino",
     date: "2026-04-16",
-    cover: "img/posts/concerto-mamma-cusano-2026.jpg",
+    cover: "img/posts/locandina-concerto-mamma-cusano-2026.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-05-10",
     eventTime: "16:30",
     eventPlace: "Cusano Milanino",
     tags: ["musica", "banda cusano", "concerto"],
+    relatedPost: {
+      id: "concerto-mamma-cusano-2026",
+      label: "📖 Leggi com'è andata:"
+    },
     excerpt: "Concerto per la Festa della Mamma — Banda di Cusano Milanino",
     content: `
       <p>Vi aspettiamo al <strong>Concerto per la Festa della Mamma</strong> della Banda di Cusano Milanino!</p>
@@ -110,7 +232,11 @@ const POSTS = [
     date: "2026-04-03",
     cover: "img/posts/gita-banda-palazzolo-pergine-2026.jpg",
     pinned: false,
-    tags: ["musica", "banda palazzolo", "concerto"],
+    tags: ["musica", "banda palazzolo", "concerto", "gita"],
+    relatedPost: {
+      id: "gita-banda-palazzolo-2026-bacheca",
+      label: "📌 Questo evento era stato annunciato qui:"
+    },
     excerpt: "Un weekend tra castle, concerti, eroismi all'autogrill e promemoria notturni su Alexa. Il racconto della gita della banda di Palazzolo a Pergine Valsugana.",
     content: `
       <p>
@@ -261,6 +387,10 @@ const POSTS = [
     cover: "img/posts/referendum-2026-record-affluenza.jpg",
     pinned: false,
     tags: ["lavoro", "seggio", "referendum"],
+    relatedPost: {
+      id: "referendum-2026-bacheca",
+      label: "📌 Questo evento era stato annunciato qui:"
+    },
     excerpt: "La mia quarta esperienza come presidente di seggio, in occasione del referendum costituzionale 2026. Un weekend impegnativo, un'affluenza inaspettata e una novità: il seggio speciale.",
     content: `
       <p>
@@ -726,7 +856,7 @@ const POSTS = [
     `
   },
 
-  { id: "gita-banda-palazzolo-2026",
+  { id: "gita-banda-palazzolo-2026-bacheca",
     title: "Trasferta e concerto a Pergine Valsugana",
     date: "2026-03-18",
     cover: "",
@@ -734,7 +864,11 @@ const POSTS = [
     eventDate: "2026-03-28",
     eventTime: "20:30",
     eventPlace: "Pergine Valsugana",
-    tags: ["musica", "banda palazzolo", "concerto"],
+    tags: ["musica", "banda palazzolo", "concerto", "gita"],
+    relatedPost: {
+      id: "gita-banda-palazzolo-pergine-2026",
+      label: "📖 Leggi com'è andata:"
+    },
     excerpt: "La Banda di Palazzolo in trasferta!",
     content: `
       <p>Quest'anno la gita della banda dura 2 giorni! La trasferta a Pergine Valsugana prevede anche una notte fuori, tra il 28 e il 29 marzo 2026.</p>
@@ -744,7 +878,7 @@ const POSTS = [
     `
   },
 
-  { id: "referendum-2026",
+  { id: "referendum-2026-bacheca",
     title: "Presidente di Seggio, Referendum 2026",
     date: "2026-03-18",
     cover: "",
@@ -753,6 +887,10 @@ const POSTS = [
     eventTime: "16:00",
     eventPlace: "Paderno Dugnano",
     tags: ["lavoro", "seggio", "referendum"],
+    relatedPost: {
+      id: "referendum-2026-record-affluenza",
+      label: "📖 Leggi com'è andata:"
+    },
     excerpt: "Sabato 21 marzo c'è l'insediamento dei seggi.",
     content: `
       <p>Questo weekend sarà pieno per me. Infatti sono stato nominato presidente si seggio per il <a href="https://it.wikipedia.org/wiki/Referendum_costituzionale_in_Italia_del_2026" target="_blank" rel="noopener noreferrer">
@@ -793,7 +931,7 @@ const POSTS = [
     `
   },
 
-  { id: "concerto-estate-cusano-2026",
+  { id: "concerto-estate-cusano-2026-bacheca",
     title: "Concerto d'Estate — Banda di Cusano Milanino",
     date: "2026-03-14",
     cover: "",
@@ -812,10 +950,11 @@ const POSTS = [
     `
   },
 
-  { id: "concerto-palazzolo-cava-2026",
+  { id: "concerto-palazzolo-cava-2026-bacheca",
     title: "Concerto nell'anfiteatro — Banda di Palazzolo Milanese",
     date: "2026-03-16",
-    cover: "",
+    cover: "img/posts/locandina-concerto-palazzolo-cava-2026.jpg",
+    showInGallery: false,
     pinned: true,
     eventDate: "2026-05-24",
     eventTime: "",
@@ -827,8 +966,8 @@ const POSTS = [
       <p>Il luogo è bellissimo: l'anfiteatro della Cava di Paderno Dugnano. Il pubblico che verrà a sentirci potrà ascoltare la musica 
       e guardare il paesaggio suggestivo di quel meraviglio parco</p>
       <p>Il concerto è di pomeriggio e il mio consiglio è di arrivare al parco molto in anticipo per avere anche il tempo di fare una passeggiata e goderselo tutto.</p>
-      <p>Per <strong>l'orario preciso</strong> ci saranno aggiornamenti su questa pagina (arriverà anche la locandina!)</p>
-      <p>📅 24 Maggio 2026 · pomeriggio<br>📍 Paderno Dugnano, Anfiteatro Parco La Cava </p>
+      <p>Ci sarà la <strong>Junior Band</strong> ad aprire il concerto!</p>
+      <p>📅 24 Maggio 2026 · 16:30<br>📍 Paderno Dugnano, Anfiteatro Parco La Cava </p>
     `
   },
 

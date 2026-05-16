@@ -57,6 +57,16 @@
   <footer><p>&copy; 2026 Davide Zanella</p></footer>
 </div>
 
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lb-close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lb-prev">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" id="lb-next">&#8250;</button>
+    <img class="lightbox-img" id="lb-img" src="" alt="">
+    <div class="lightbox-caption" id="lb-caption"></div>
+  </div>
+</div>
+
 <script src="posts.js"></script>
 <script src="blog-utils.js"></script>
 <script src="nav.js"></script>
@@ -94,13 +104,75 @@
           <div class="related-card-date">${formatDate(r.date)}</div>
         </a>`).join('')}</div>` : '';
 
+    const linkedPost = post.relatedPost ? POSTS.find(p => p.id === post.relatedPost.id) : null;
+    const linkedPostHtml = linkedPost ? `
+      <div class="post-divider"></div>
+      <div class="related-title">Post correlato</div>
+      <div class="related-grid">
+        <a class="related-card" href="post.html?id=${linkedPost.id}">
+          <div class="related-card-title">${post.relatedPost.label}</div>
+          <div class="related-card-date">${linkedPost.title}</div>
+        </a>
+      </div>` : '';
+
     container.innerHTML = `
       <div class="post-tags">${tags}</div>
       <h1 class="post-title">${post.title}</h1>
       <div class="post-meta">${formatDateLong(post.date)}</div>
       ${cover}
       <div class="post-body">${post.content}</div>
+      ${linkedPostHtml}
       ${relatedHtml}`;
+
+    const postImages = Array.from(container.querySelectorAll('.post-cover, .post-body img'));
+    const imageItems = postImages.map(img => ({ src: img.src, caption: img.alt || '', postId: null }));
+
+    // Lightbox
+    let lbItems = [];
+    let lbIndex = 0;
+
+    function lbOpen(index, items) {
+      lbItems = items;
+      lbIndex = index;
+      lbUpdate();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function lbClose() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbUpdate() {
+      const p = lbItems[lbIndex];
+      document.getElementById('lb-img').src = p.src;
+      document.getElementById('lb-img').alt = p.caption || '';
+      document.getElementById('lb-caption').textContent = p.caption || '';
+    }
+
+    document.getElementById('lb-close').addEventListener('click', lbClose);
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) lbClose();
+    });
+    document.getElementById('lb-prev').addEventListener('click', function(e) {
+      e.stopPropagation();
+      lbIndex = (lbIndex - 1 + lbItems.length) % lbItems.length;
+      lbUpdate();
+    });
+    document.getElementById('lb-next').addEventListener('click', function(e) {
+      e.stopPropagation();
+      lbIndex = (lbIndex + 1) % lbItems.length;
+      lbUpdate();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key === 'Escape') lbClose();
+      if (e.key === 'ArrowLeft') { lbIndex = (lbIndex - 1 + lbItems.length) % lbItems.length; lbUpdate(); }
+      if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % lbItems.length; lbUpdate(); }
+    });
+    postImages.forEach((img, i) => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => lbOpen(i, imageItems));
+    });
   }
 </script>
 </body>

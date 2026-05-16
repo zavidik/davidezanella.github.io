@@ -611,3 +611,51 @@ blockquote::before {
   font-weight: 700;
   margin-bottom: 14px;
 }
+
+/* ══════════════════════════════════════════
+   LIGHTBOX
+   ══════════════════════════════════════════ */
+.lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.93);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .25s;
+}
+.lightbox.open { opacity: 1; pointer-events: all; }
+.lightbox-inner {
+  position: relative; max-width: 90vw; max-height: 90vh;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.lightbox-img {
+  max-width: 90vw; max-height: 78vh;
+  border-radius: 10px; object-fit: contain;
+  box-shadow: 0 8px 48px rgba(0,0,0,.5);
+}
+.lightbox-caption { color: rgba(255,255,255,.85); font-size: .88rem; text-align: center; line-height: 1.4; }
+.lightbox-post-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.15); color: #fff;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 8px; padding: 7px 14px;
+  text-decoration: none; font-size: .82rem; transition: background .15s;
+}
+.lightbox-post-link:hover { background: rgba(255,255,255,.25); }
+.lightbox-close {
+  position: absolute; top: -40px; right: 0;
+  color: rgba(255,255,255,.7); font-size: 1.5rem;
+  cursor: pointer; background: none; border: none; padding: 4px; transition: color .15s;
+}
+.lightbox-close:hover { color: #fff; }
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  color: rgba(255,255,255,.7); font-size: 1.8rem;
+  cursor: pointer; background: rgba(0,0,0,.3); border: none;
+  border-radius: 50%; width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s, color .15s;
+}
+.lightbox-nav:hover { background: rgba(0,0,0,.6); color: #fff; }
+.lightbox-prev { left: -60px; }
+.lightbox-next { right: -60px; }
+@media(max-width:600px) { .lightbox-prev { left: 8px; } .lightbox-next { right: 8px; } }
+.empty-state { color: var(--muted); text-align: center; padding: 60px 0; font-size: .9rem; }
